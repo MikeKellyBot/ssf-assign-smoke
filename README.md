@@ -26,6 +26,7 @@ branch: bot/issue-4-third-scratch-item-to-assign-from-the-ov
 What the overlay reads here is *an agent is attached*, not *who is assigned*. The
 assignee is mutable — an item can be unassigned again — while the attachment stays
 recorded on the item as the `ssf` comment above and on the branch it names, so the
-fixture holds whatever the assignee is at any later moment. The item was closed at
-12:50:18Z to free its workspace and will be reopened to assign from the overlay
-again; that round trip does not change what the overlay reads here.
+fixture holds whatever the assignee is at any later moment, and whatever the item's
+own state is. #4 has already been through the round trip: closed at 12:50:18Z to
+free its workspace, reopened at 12:51:09Z to assign from the overlay again. Neither
+step touched the attachment, which is the point of keying the fixture on it.
